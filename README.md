@@ -4,7 +4,9 @@
 
 ## Introduction
 
-Tourism App is a collaborative project developed by Elena, Jack, and Oleg. The application leverages Google APIs to provide users with a comprehensive platform for planning tourist journeys within the UK. This README serves as a guide to understand the functionality, setup, and usage of the Tourism App.
+Tourism App is a collaborative project developed during my Web Development Course with Founders and Coders UK in 2024.  
+The application leverages Google APIs to provide users with a comprehensive platform for planning tourist journeys within the UK.  
+This README serves as a guide to understand the functionality, setup, and usage of the Tourism App.
 
 ---
 
@@ -145,4 +147,8 @@ The Tourism App provides the following endpoints for interaction:
 
 ---
 
-Thank you for considering the Tourism App!🧳🚗
+### The initial part of the project has been developed in collaboration with Jack and Oleg during the FAC course.
+
+---
+
+# Thank you for considering the project! 🧳🚗

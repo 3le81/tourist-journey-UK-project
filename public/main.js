@@ -23,8 +23,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Show only the touristic-places-list after places are fetched
         touristicPlacesList.style.display = 'block';
+
+        // Add event listener for each list item to trigger OpenAI interaction when clicked
+        const nearbyPlaces = document.querySelectorAll('.nearby-place');
+        nearbyPlaces.forEach(listItem => {
+            listItem.addEventListener('click', function () {
+                // Extract the name of the place from the list item
+                const placeName = this.textContent;
+
+                // Call function to interact with OpenAI, passing the name of the place
+                interactWithOpenAI(placeName);
+            });
+        });
     });
 });
+async function interactWithOpenAI(placeName) {
+    try {
+        // Make a POST request to the server-side endpoint for OpenAI interaction
+        const response = await fetch('/openai-interaction', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                prompt: `Would you like more information about ${placeName}?`
+            })
+        });
+
+        const data = await response.json();
+        // Display the response from OpenAI to the user
+        displayOpenAIResponse(data.response);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+function displayOpenAIResponse(response) {
+    // Display the response from OpenAI to the user, e.g., in a popup message or modal.. to be implemented!!
+
+    alert(response); //gets undefined at the moment.
+}
 
 // Define global variables for map and directions
 let map, directionsService, directionsRenderer;
